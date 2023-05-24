@@ -30,22 +30,41 @@
 # Он называет сумму этих чисел S и их произведение P.
 # Помогите Кате отгадать задуманные Петей числа.
 
-def find_numbers(S, P):
-    for x in range(1, S + 1):
-        y = S - x
-        if x * y == P:
-            return x, y
+# def find_numbers(S, P):
+#     for x in range(1, S + 1):
+#         y = S - x
+#         if x * y == P:
+#             return x, y
 
-    return None
+#     return None
 
 
-S = int(input("Введите сумму чисел S: "))
-P = int(input("Введите произведение чисел P: "))
+# S = int(input("Введите сумму чисел S: "))
+# P = int(input("Введите произведение чисел P: "))
 
-result = find_numbers(S, P)
-if result:
-    x, y = result
-    print("Первое число X:", x)
-    print("Второе число Y:", y)
-else:
-    print("Числа не найдены.")
+# result = find_numbers(S, P)
+# if result:
+#     x, y = result
+#     print("Первое число X:", x)
+#     print("Второе число Y:", y)
+# else:
+#     print("Числа не найдены.")
+
+
+# Задача 14: Требуется вывести все целые степени двойки (т.е. числа вида 2k), не превосходящие числа N.
+
+def powers_of_two(N):
+    power = 0
+    result = []
+    while 2 ** power <= N:
+        result.append(2 ** power)
+        power += 1
+    return result
+
+
+N = int(input("Введите число N: "))
+
+result = powers_of_two(N)
+print("Целые степени двойки, не превосходящие", N, ":")
+for num in result:
+    print(num)
