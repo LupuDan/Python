@@ -22,10 +22,31 @@
 # 8
 # 5 4 2 2 4 2 2 5
 
-num = int(input())
-grades = list(map(int, input().split()))
-num_max = max(grades)
-num_min = min(grades)
+# num = int(input())
+# grades = list(map(int, input().split()))
+# num_max = max(grades)
+# num_min = min(grades)
 
-grades_change = [num_min if j == num_max else j for j in grades]
-print(grades_change)
+# grades_change = [num_min if j == num_max else j for j in grades]
+# print(grades_change)
+
+
+
+# Напишите функцию, которая принимает
+# одно число и проверяет, является ли оно простым
+#
+# Напоминание: Простое число - это число,
+# которое имеет 2 делителя: 1 и n(само число)
+
+# https://www.delftstack.com/ru/howto/python/python-isprime/
+
+def prime_num(num):
+    if num == 2 or num == 3: return True
+    if num % 2 == 0 or num < 2: return False
+    for i in range(3, int(num ** 0.5) + 1, 2):
+        if num % i == 0:
+            return False
+    return True
+
+
+print(prime_num(int(input())))
